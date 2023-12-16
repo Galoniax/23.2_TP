@@ -81,6 +81,9 @@ public class Main {
         Llave[] llaveSemifinales = new Llave[2];
         Llave[] llaveFinal = new Llave[1];
 
+
+        //Fase Grupos
+        System.out.println("Fase Grupos (Copa América 2019):");
         Grupo.crearPartidos(Grupo1, FaseGrupos); //Crear Partidos Grupo A
         Grupo.crearPartidos(Grupo2, FaseGrupos); //Crear Partidos Grupo B
 
@@ -94,14 +97,17 @@ public class Main {
         Grupo.TablaPosiciones(Grupo2);
 
         //Etapa Cuartos
+        System.out.println("\n\nEtapa Cuartos (Copa América 2019)");
         ArrayList<Equipo> equiposQueAvanzan = FaseGrupos.getEquiposQueAvanzan();
         ejecutarCuartos(cuartos, llaveCuartos, equiposQueAvanzan);
 
         //Etapa SemiFinal
+        System.out.println("\nEtapa SemiFinal (Copa América 2019)");
         ArrayList<Equipo> equiposQueAvanzanSemis = cuartos.getEquiposQueAvanzan();
         ejecutarSemifinales(semifinales, llaveSemifinales, equiposQueAvanzanSemis);
 
         //Etapa Final
+        System.out.println("\nEtapa Final (Copa América 2019)");
         ArrayList<Equipo> equiposQueAvanzanFinal = semifinales.getEquiposQueAvanzan();
         ejecutarFinal(finalEtapa, llaveFinal, equiposQueAvanzanFinal);
     }

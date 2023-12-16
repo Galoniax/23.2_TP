@@ -72,13 +72,13 @@ public class Grupo extends EtapaMundial {
             Equipo equipoLocal = partido.getLocal();
             Equipo equipoVisitante = partido.getVisitante();
 
-            System.out.println("Partido: " + equipoLocal.getNombre() + " vs " + equipoVisitante.getNombre());
+            System.out.println("\nPartido: " + equipoLocal.getNombre() + " vs " + equipoVisitante.getNombre());
 
             SubirPuntajes(partido);
 
             Equipo ganador = null;
             if (golesLocal == golesVisitante) {
-                System.out.println("Resultado: Empate");
+                System.out.println("Resultado: Empate\n");
                 etapa.addEquipoQueAvanza(equipoLocal);
                 etapa.addEquipoQueAvanza(equipoVisitante);
             } else {
@@ -89,13 +89,11 @@ public class Grupo extends EtapaMundial {
                     ganador = equipoVisitante;
                 }
 
-                System.out.println("Resultado: " + ganador.getNombre() + " gana");
+                System.out.println("Resultado: " + ganador.getNombre() + " gana\n");
                 etapa.addEquipoQueAvanza(ganador);
             }
 
-
             if (ganador != null) {
-                System.out.println(" Ganador: " + ganador.getNombre());
                 ganador.agregarPartido(partido);
             }
 
@@ -123,7 +121,6 @@ public class Grupo extends EtapaMundial {
 
     public static void TablaPosiciones(Grupo grupo) {
         ArrayList<Equipo> equipos = grupo.getEquiposConformados();
-
         for (Equipo equipo : equipos) {
             System.out.println(equipo.getNombre() + " Puntuación: \n" + equipo.getPuntaje());
         }
@@ -173,6 +170,12 @@ public class Grupo extends EtapaMundial {
                 }
             }
         }
+        System.out.println("Equipos ganadores de la Etapa Cuartos:");
+        int i = 1;
+        for (Equipo equipo : equiposQueAvanzan) {
+            System.out.println(i + ". " + equipo.getNombre());
+            i++;
+        }
     }
 
     //Semifinal
@@ -219,6 +222,12 @@ public class Grupo extends EtapaMundial {
                 }
             }
         }
+        System.out.println("Equipos ganadores de la Etapa SemiFinal:");
+        int i = 1;
+        for (Equipo equipo : equiposQueAvanzanSemis) {
+            System.out.println(i + ". " + equipo.getNombre());
+            i++;
+        }
     }
 
     //Final
@@ -262,6 +271,12 @@ public class Grupo extends EtapaMundial {
             if (equipoMenorPuntaje != null) {
                 equiposQueAvanzanFinal.remove(equipoMenorPuntaje);
             }
+        }
+        System.out.println("Equipos ganadores de la Etapa Final:");
+        int i = 1;
+        for (Equipo equipo : equiposQueAvanzanFinal) {
+            System.out.println(i + ". " + equipo.getNombre());
+            i++;
         }
     }
 }
