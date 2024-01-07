@@ -82,6 +82,9 @@ public class Main {
         Llave[] llaveFinal = new Llave[1];
 
 
+        //grupo1.crearPartidos(...)
+        //Variable todas en minúsculas
+
         //Fase Grupos
         System.out.println("Fase Grupos (Copa América 2019):");
         Grupo.crearPartidos(Grupo1, FaseGrupos); //Crear Partidos Grupo A
